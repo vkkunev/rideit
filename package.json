@@ -1,0 +1,16 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Rideit web application",
+    "main": "index.js",
+    "scripts": {
+        "server": "cd server && yarn start",
+        "client": "cd client && yarn start",
+        "dev": "concurrently \"yarn run server\" \"yarn run client\""
+    },
+    "author": "Velislav Kunev",
+    "license": "MIT",
+    "dependencies": {
+        "concurrently": "^6.2.0"
+    }
+}
