@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "server": "nodemon app.js",
     "test": "mocha --timeout 30000 ./test/**/*.js --exit"
   },
   "author": "Velislav Kunev",

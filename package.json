@@ -4,9 +4,11 @@
     "description": "Rideit web application",
     "main": "index.js",
     "scripts": {
+        "client-install": "yarn install --prefix client",
         "server": "cd server && yarn start",
         "client": "cd client && yarn start",
-        "dev": "concurrently \"yarn run server\" \"yarn run client\""
+        "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
     },
     "author": "Velislav Kunev",
     "license": "MIT",
