@@ -12,7 +12,7 @@ const CreateCommunity = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        axios.post(process.env.REACT_APP_SERVER_URL + 'community', values)
+        axios.post(process.env.REACT_APP_SERVER_URL+ process.env.PORT + 'community', values)
     }
 
     return (
