@@ -1,6 +1,5 @@
 const Koa = require('koa');
 const KoaRauter = require('koa-router');
-const serve = require("koa-static");
 const mount = require('koa-mount');
 const body = require("koa-bodyparser");
 const logger = require("koa-logger");
