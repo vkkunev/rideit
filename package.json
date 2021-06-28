@@ -4,11 +4,11 @@
     "description": "Rideit web application",
     "main": "index.js",
     "scripts": {
-        "client-install": "yarn install --prefix client",
         "server": "cd server && yarn start",
         "client": "cd client && yarn start",
         "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-        "heroku-postbuild": "cd client && yarn install && yarn run build"
+        "heroku-postbuild": "cd client && yarn install && yarn run build",
+        "start": "cd server node server.js"
     },
     "author": "Velislav Kunev",
     "license": "MIT",
