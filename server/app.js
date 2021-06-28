@@ -22,7 +22,7 @@ const router = new KoaRauter();
 // static.use(serve('../client/build'));
 // app.use(mount('/', static));
 
-const PORT = 5000;
+const PORT = process.env.PORT | 5000;
 
 app.use(body());
 app.use(logger());
