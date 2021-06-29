@@ -20,7 +20,7 @@ const router = new KoaRauter();
 
 if (process.env.ENV === 'production') {
     const static = new Koa();
-    static.use(serve('../client/build'));
+    static.use(serve('/client/build'));
     app.use(mount('/', static));
 }
 
