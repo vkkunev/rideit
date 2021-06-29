@@ -9,6 +9,7 @@ const schema = require('./graphql/schema');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const cron = require('node-cron');
+const serve = require('koa-static')
 
 const resolvers = require('./graphql/resolvers/index');
 const config = require('dotenv').config();
@@ -17,9 +18,11 @@ const config = require('dotenv').config();
 const app = new Koa();
 const router = new KoaRauter();
 
-// const static = new Koa();
-// static.use(serve('../client/build'));
-// app.use(mount('/', static));
+if (process.env.ENV === 'production') {
+    const static = new Koa();
+    static.use(serve('../client/build'));
+    app.use(mount('/', static));
+}
 
 const PORT = process.env.PORT | 5000;
 
