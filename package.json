@@ -14,7 +14,7 @@
   "engines": {
     "node": "12.14.0"
   },
-  "author": "Velislav Kunev",
+  "author": "Velislav Kunev ",
   "license": "MIT",
   "private": true,
   "dependencies": {
