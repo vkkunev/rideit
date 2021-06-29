@@ -19,10 +19,10 @@ const app = new Koa();
 const router = new KoaRauter();
 
 const static = new Koa();
-if (process.env.ENV === 'production') {
+// if (process.env.ENV === 'production') {
     static.use(serve('./client/build'));
     app.use(mount('/', static));
-}
+// }
 
 
 const PORT = process.env.PORT | 5000;
