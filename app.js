@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const cron = require('node-cron');
 const serve = require('koa-static')
+const path = require('path')
 
 const resolvers = require('./graphql/resolvers/index');
 
@@ -22,10 +23,18 @@ const router = new KoaRauter();
 //     app.use(mount('/', static));
 // // }
 
-const staticDirPath = path.join(__dirname, './client/build');
+const PORT = process.env.PORT | 5000;
+
+const staticDirPath = path.join(__dirname, 'client', 'build');
 app.use(serve(staticDirPath));
 
-const PORT = process.env.PORT | 5000;
+app.use(async ctx => {
+    await send(ctx, `/index.html`, {
+        staticDirPath
+    });
+});
+
+
 
 app.use(body());
 app.use(logger());
