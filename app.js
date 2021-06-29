@@ -25,16 +25,9 @@ const router = new KoaRauter();
 
 const PORT = process.env.PORT | 5000;
 
-const staticDirPath = path.join(__dirname, 'client', 'build');
-app.use(serve(staticDirPath));
-
-app.use(async ctx => {
-    await send(ctx, `/index.html`, {
-        staticDirPath
-    });
-});
-
-
+const static_pages = new Koa();
+static_pages.use(serve(__dirname + "/client/build"));
+app.use(mount("/", static_pages));
 
 app.use(body());
 app.use(logger());
