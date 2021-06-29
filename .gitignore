@@ -1,3 +1,16 @@
+<<<<<<< HEAD
 .env
 /node_modules
 /client/node_modules
+=======
+
+# Ignore .env
+client/.env
+server/.env
+
+#Ignore node_modules
+node_modules
+client/node_modules
+server/node_modules
+
+>>>>>>> b594f5dd7967fa14c9afc3edb98d68bf79fe66d4
