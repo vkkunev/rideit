@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const cron = require('node-cron');
 const serve = require('koa-static')
 const path = require('path')
+const send = require('koa-send');
 
 const resolvers = require('./graphql/resolvers/index');
 
@@ -25,9 +26,15 @@ const router = new KoaRauter();
 
 const PORT = process.env.PORT | 5000;
 
-const static_pages = new Koa();
-static_pages.use(serve(__dirname + "/client/build"));
-app.use(mount("/", static_pages));
+app.use(serve(__dirname + './client/build'));
+
+router.get('*', async (ctx, next) => {
+    try {
+      await send(ctx, './client/build/index.html');
+    } catch(err) {
+      return next();
+    }
+  });
 
 app.use(body());
 app.use(logger());
