@@ -12,8 +12,6 @@ const cron = require('node-cron');
 const serve = require('koa-static')
 
 const resolvers = require('./graphql/resolvers/index');
-const config = require('dotenv').config();
-
 
 const app = new Koa();
 const router = new KoaRauter();
