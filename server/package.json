@@ -8,6 +8,7 @@
     "server": "nodemon app.js",
     "test": "mocha --timeout 30000 ./test/**/*.js --exit"
   },
+  "proxy": "0.0.0.0:5000",
   "engines": {
     "node": "12.14.0"
   },
