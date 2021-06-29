@@ -144,4 +144,4 @@ app.use(mount('/graphql', graphqlHTTP({
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen();
+app.listen(PORT,'0.0.0.0', () => console.log('Server runing on ' + PORT));
