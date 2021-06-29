@@ -2,12 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Rideit web application",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "client": "npm run start --prefix client",
     "server": "nodemon app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "mocha --timeout 30000 ./test/**/*.js --exit",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
