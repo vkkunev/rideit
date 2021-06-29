@@ -28,7 +28,7 @@ const PORT = process.env.PORT | 5000;
 
 app.use(serve(__dirname + './client/build'));
 
-router.get('*', async (ctx, next) => {
+router.get('/(.*)', async (ctx, next) => {
     try {
       await send(ctx, './client/build/index.html');
     } catch(err) {
