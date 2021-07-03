@@ -16,7 +16,7 @@ const Post = ({ postData }) => {
     const { _id, title, body, author, votes, voters, comments } = postData;
 
     const changeVote = (id, isUpvote) => {
-        axios.post(process.env.REACT_APP_SERVER_URL + 'vote', { id, isUpvote, userId }).then(response => {
+        axios.post('/vote', { id, isUpvote, userId }).then(response => {
             const votes = response.data.votes;
             setVotes(votes);
             setVoteSubmitted(true);

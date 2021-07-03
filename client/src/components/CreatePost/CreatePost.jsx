@@ -19,7 +19,7 @@ const CreatePost = () => {
     })
 
     const fetchCommunities = async () => {
-        const result = await axios.get(process.env.REACT_APP_SERVER_URL+ process.env.PORT + 'community');
+        const result = await axios.get('/community');
         setCommunities(result.data);
     };
 
@@ -29,7 +29,7 @@ const CreatePost = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        axios.post(process.env.REACT_APP_SERVER_URL + 'createPost', values)
+        axios.post('/createPost', values)
     }
 
     const handleOnChange = (e) => {

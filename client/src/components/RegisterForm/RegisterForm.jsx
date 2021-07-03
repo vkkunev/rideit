@@ -17,7 +17,7 @@ const RegisterForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(process.env.REACT_APP_SERVER_URL + 'register', values).then((res)=> {
+        axios.post('/register', values).then((res)=> {
             const { status, data } = res;
             if (status && status === 200) {
                 context.login(data);

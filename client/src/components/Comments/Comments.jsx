@@ -22,7 +22,7 @@ const Comments = ({ comments, postId }) => {
             by: 'author'
         }
 
-        axios.post(process.env.REACT_APP_SERVER_URL + process.env.PORT + 'editPost', { id: postId, text: comment.text, by: comment.by }).then(response => { 
+        axios.post('/editPost', { id: postId, text: comment.text, by: comment.by }).then(response => { 
             if (response.status === 200) {
                 const comments = response.data.comments;
                 setComments(comments)

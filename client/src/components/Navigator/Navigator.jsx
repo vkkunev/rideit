@@ -30,7 +30,7 @@ const Navigator = ({ selectCategory }) => {
     const [communities, setCommunities] = useState([]);
 
     const fetchCommunities = async () => {
-        const result = await axios.get(process.env.REACT_APP_SERVER_URL + 'community');
+        const result = await axios.get('/community');
         setCommunities(result.data);
     };
 

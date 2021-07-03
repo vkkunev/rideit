@@ -16,7 +16,7 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(process.env.REACT_APP_SERVER_URL + 'login', values).then((res)=> {
+        axios.post('/login', values).then((res)=> {
             const { status, data } = res;
             if (status && status === 200) {
                 context.login(data);

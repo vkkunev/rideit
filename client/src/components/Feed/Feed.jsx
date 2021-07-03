@@ -13,7 +13,7 @@ const Feed = ({category}) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios.post(process.env.REACT_APP_SERVER_URL + '/posts', category);
+            const result = await axios.post('/posts', category);
             let posts = result.data;
             if (Object.values(category)[0] ==='popular') {
                 posts = posts.sort( (a, b) => {return b.votes - a.votes});
